@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sendero Gin Premium — Un gin artesanal argentino nacido de la naturaleza. Botánicos seleccionados, receta propia, carácter único.">
+  <meta property="og:title" content="Sendero Gin Premium">
+  <meta property="og:description" content="El camino hacia lo extraordinario. Gin premium artesanal argentino.">
+  <meta property="og:type" content="website">
+  <title>Sendero — Gin Premium</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%233A4632'/><text y='.9em' x='15' font-size='75' fill='%23C4A882' font-family='Georgia'>S</text></svg>">
+</head>
+<body>
+
+  <!-- ===================== AGE GATE ===================== -->
+  <div id="age-gate" class="age-gate">
+    <div class="age-gate__inner">
+      <svg class="age-gate__monogram" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M58,16 C55,9 46,6 36,8 C22,12 14,22 18,33 C22,44 37,48 50,54 C62,60 70,68 67,79 C64,89 52,97 38,97 C26,97 17,91 15,83" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="M50,14 C44,28 36,46 28,64 C24,73 20,84 18,94" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M50,14 C52,8 58,7 60,11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <p class="age-gate__brand">SENDERO</p>
+      <h2 class="age-gate__title">Bienvenido a Sendero</h2>
+      <p class="age-gate__text">Por favor confirmá que tenés 18 años o más para continuar.</p>
+      <div class="age-gate__buttons">
+        <button id="age-yes" class="btn btn--beige">Soy mayor de 18</button>
+        <button id="age-no" class="btn btn--ghost">Soy menor de edad</button>
+      </div>
+      <p class="age-gate__legal">Sendero Gin Premium promueve el consumo responsable.<br>Bebé con moderación.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SCROLL PROGRESS ===================== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__container">
+      <a href="#inicio" class="navbar__logo">
+        <svg class="navbar__mark" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M58,16 C55,9 46,6 36,8 C22,12 14,22 18,33 C22,44 37,48 50,54 C62,60 70,68 67,79 C64,89 52,97 38,97 C26,97 17,91 15,83" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M50,14 C44,28 36,46 28,64 C24,73 20,84 18,94" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M50,14 C52,8 58,7 60,11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span class="navbar__brand">SENDERO</span>
+      </a>
+
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="#el-gin" class="navbar__link">El Gin</a></li>
+        <li><a href="#botanicos" class="navbar__link">Botánicos</a></li>
+        <li><a href="#cocteles" class="navbar__link">Cócteles</a></li>
+        <li><a href="#nosotros" class="navbar__link">Nosotros</a></li>
+        <li><a href="#contacto" class="navbar__link navbar__cta">Comprar</a></li>
+      </ul>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero__bg">
+        <img src="assets/img/hero-bg.jpg" alt="Sendero Gin Premium" class="hero__image" fetchpriority="high">
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow fade-in-up" style="--delay:.2s">ARGENTINA &nbsp;·&nbsp; GIN PREMIUM</p>
+
+        <svg class="hero__monogram fade-in-scale" style="--delay:.5s" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M58,16 C55,9 46,6 36,8 C22,12 14,22 18,33 C22,44 37,48 50,54 C62,60 70,68 67,79 C64,89 52,97 38,97 C26,97 17,91 15,83" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M50,14 C44,28 36,46 28,64 C24,73 20,84 18,94" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M50,14 C52,8 58,7 60,11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+
+        <h1 class="hero__title fade-in-up" style="--delay:.7s">SENDERO</h1>
+        <p class="hero__subtitle fade-in-up" style="--delay:.9s">GIN PREMIUM</p>
+        <div class="hero__line fade-in" style="--delay:1.1s"></div>
+        <p class="hero__tagline fade-in-up" style="--delay:1.3s">Donde cada sorbo es un sendero al alma.</p>
+
+        <div class="hero__cta fade-in-up" style="--delay:1.5s">
+          <a href="#el-gin" class="btn btn--outline-white">Descubrí el Gin</a>
+          <a href="#contacto" class="btn btn--beige">Conseguí el tuyo</a>
+        </div>
+      </div>
+
+      <a href="#el-gin" class="hero__scroll" aria-label="Scroll down">
+        <span class="hero__scroll-text">Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <div class="manifesto__pattern" aria-hidden="true"></div>
+      <div class="container">
+        <div class="manifesto__inner">
+          <span class="manifesto__mark reveal-up" aria-hidden="true">"</span>
+          <blockquote class="manifesto__quote reveal-up">
+            Creemos que los mejores momentos nacen del encuentro entre amigos,<br class="br-desktop"> la naturaleza argentina como testigo, y un gin que respeta<br class="br-desktop"> su origen desde cada botánico seleccionado.
+          </blockquote>
+          <span class="manifesto__mark manifesto__mark--close reveal-up" aria-hidden="true">"</span>
+          <p class="manifesto__author reveal-up">— Sendero, Argentina</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL GIN -->
+    <section id="el-gin" class="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__text">
+            <p class="section-label reveal-up">Nuestra Esencia</p>
+            <h2 class="section-title reveal-up">Un gin nacido<br><em>de la aventura</em></h2>
+            <div class="section-rule reveal-up"></div>
+            <p class="about__body reveal-up">
+              Sendero nació de la pasión de dos amigos por crear algo diferente. Una receta propia, con botánicos seleccionados que capturan la esencia de la naturaleza argentina: sus bosques, su montaña, su tierra.
+            </p>
+            <p class="about__body reveal-up">
+              Cada botella es un camino por descubrir. Un gin de carácter equilibrado, con notas complejas que evolucionan en el paladar como los paisajes de una aventura sin fin.
+            </p>
+            <div class="about__stats reveal-up">
+              <div class="stat-item">
+                <p class="stat-item__number"><span class="count" data-target="40">0</span>%</p>
+                <p class="stat-item__label">Vol. Alc.</p>
+              </div>
+              <div class="stat-item__sep"></div>
+              <div class="stat-item">
+                <p class="stat-item__number"><span class="count" data-target="8">0</span>+</p>
+                <p class="stat-item__label">Botánicos</p>
+              </div>
+              <div class="stat-item__sep"></div>
+              <div class="stat-item">
+                <p class="stat-item__number"><span class="count" data-target="100">0</span>%</p>
+                <p class="stat-item__label">Artesanal</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__visual reveal-right">
+            <div class="about__image-wrap">
+              <img src="assets/img/brand-card.jpg" alt="Sendero — Identidad de Marca" class="about__image" loading="lazy">
+              <div class="about__seal-wrap">
+                <img src="assets/img/wax-seal.jpg" alt="Sello Sendero" class="about__seal" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTANICOS -->
+    <section id="botanicos" class="botanicals">
+      <div class="botanicals__bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-header">
+          <p class="section-label section-label--light reveal-up">La Receta</p>
+          <h2 class="section-title section-title--light reveal-up">Botánicos<br><em>Seleccionados</em></h2>
+          <p class="botanicals__intro reveal-up">Cada ingrediente elegido con precisión para construir un perfil aromático único. Una sinfonía de sabores que nace de la tierra argentina.</p>
+        </header>
+
+        <div class="botanicals__grid">
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="20" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="28" r="7" stroke="currentColor" stroke-width="1.5"/><circle cx="30" cy="28" r="7" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="38" x2="24" y2="46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Enebro</h3>
+            <p class="botanical-card__latin">Juniperus communis</p>
+            <p class="botanical-card__desc">El alma de todo gin. Notas resinosas y piñáceas que definen su carácter esencial.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="2" x2="24" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="24" y1="34" x2="24" y2="46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 8 L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M30 30 L34 40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Cilantro</h3>
+            <p class="botanical-card__latin">Coriandrum sativum</p>
+            <p class="botanical-card__desc">Semillas que aportan calidez cítrica y un dulzor especiado de fondo.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="24" cy="24" rx="8" ry="14" stroke="currentColor" stroke-width="1.5"/><path d="M8 24 Q16 16 24 24 Q32 32 40 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Cardamomo</h3>
+            <p class="botanical-card__latin">Elettaria cardamomum</p>
+            <p class="botanical-card__desc">Exótico y especiado, suma profundidad aromática y un toque oriental irresistible.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4 C24 4 8 16 8 28 C8 38 15 44 24 44 C33 44 40 38 40 28 C40 16 24 4 24 4Z" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="4" x2="24" y2="44" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Eucalipto</h3>
+            <p class="botanical-card__latin">Eucalyptus globulus</p>
+            <p class="botanical-card__desc">Frescura del bosque nativo. Mentolado y limpio, evoca los senderos entre árboles.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M16 20 Q20 16 24 20 Q28 24 32 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/><line x1="24" y1="10" x2="20" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Limón</h3>
+            <p class="botanical-card__latin">Citrus limon</p>
+            <p class="botanical-card__desc">Cáscara fresca que aporta brillo cítrico y una vivacidad que abre el paladar.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="24" y1="4" x2="24" y2="44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M24 12 Q36 18 32 28 Q24 24 24 12" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M24 22 Q12 28 16 38 Q24 34 24 22" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Angélica</h3>
+            <p class="botanical-card__latin">Angelica archangelica</p>
+            <p class="botanical-card__desc">Raíz terrosa que ancla todos los aromas y otorga la complejidad característica del gin premium.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA BOTELLA -->
+    <section id="la-botella" class="bottle">
+      <div class="container">
+        <div class="bottle__grid">
+          <div class="bottle__content reveal-left">
+            <p class="section-label reveal-up">El Producto</p>
+            <h2 class="section-title reveal-up">Diseñada para<br><em>perdurar</em></h2>
+            <div class="section-rule reveal-up"></div>
+            <p class="bottle__body reveal-up">
+              Una botella pensada desde el primer trazo. Forma premium, peso en mano, presencia en cualquier mesa. El diseño exterior habla antes de que lo haga el gin.
+            </p>
+            <p class="bottle__body reveal-up">
+              La etiqueta está en camino. Lo que ya es inamovible es lo que hay adentro: una receta propia, botánicos de primer nivel y el alma de dos argentinos que se animaron a crear algo nuevo.
+            </p>
+            <a href="#contacto" class="btn btn--primary reveal-up">Quiero mi Sendero</a>
+          </div>
+
+          <div class="bottle__visual reveal-right">
+            <div class="bottle-3d">
+              <div class="bottle-3d__neck"></div>
+              <div class="bottle-3d__body">
+                <div class="bottle-3d__label">
+                  <svg class="bottle-3d__monogram" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M58,16 C55,9 46,6 36,8 C22,12 14,22 18,33 C22,44 37,48 50,54 C62,60 70,68 67,79 C64,89 52,97 38,97 C26,97 17,91 15,83" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M50,14 C44,28 36,46 28,64 C24,73 20,84 18,94" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M50,14 C52,8 58,7 60,11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                  <p class="bottle-3d__name">SENDERO</p>
+                  <p class="bottle-3d__sub">GIN PREMIUM</p>
+                  <p class="bottle-3d__coming">Etiqueta<br>Próximamente</p>
+                </div>
+              </div>
+              <div class="bottle-3d__base"></div>
+              <div class="bottle-3d__shadow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COCTELES -->
+    <section id="cocteles" class="cocktails">
+      <div class="cocktails__bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-header">
+          <p class="section-label section-label--light reveal-up">Recetas</p>
+          <h2 class="section-title section-title--light reveal-up">Cócteles<br><em>Signature</em></h2>
+          <p class="cocktails__intro reveal-up">Tres propuestas para disfrutar Sendero. Desde el clásico perfecto hasta la aventura en copa.</p>
+        </header>
+
+        <div class="cocktails__grid">
+          <article class="cocktail-card reveal-stagger">
+            <div class="cocktail-card__number">01</div>
+            <div class="cocktail-card__content">
+              <h3 class="cocktail-card__name">Sendero &amp; Tonic</h3>
+              <p class="cocktail-card__desc">El clásico elevado. Limpio, refrescante, con la identidad botánica de Sendero en cada sorbo.</p>
+              <ul class="cocktail-card__ingredients">
+                <li>50 ml Sendero Gin</li>
+                <li>150 ml Tónica premium</li>
+                <li>Rodaja de pepino</li>
+                <li>Ramita de romero</li>
+                <li>Hielo en abundancia</li>
+              </ul>
+              <p class="cocktail-card__method">Copa balón con hielo · Gin primero · Tónica en hilo · Garnish fresco</p>
+            </div>
+          </article>
+
+          <article class="cocktail-card reveal-stagger cocktail-card--featured">
+            <div class="cocktail-card__badge">Signature</div>
+            <div class="cocktail-card__number">02</div>
+            <div class="cocktail-card__content">
+              <h3 class="cocktail-card__name">El Camino</h3>
+              <p class="cocktail-card__desc">Nuestra firma. Tropical, vibrante y complejo. El gin encuentra su mejor versión en este cóctel.</p>
+              <ul class="cocktail-card__ingredients">
+                <li>50 ml Sendero Gin</li>
+                <li>30 ml Jugo de maracuyá</li>
+                <li>20 ml Jugo de limón</li>
+                <li>15 ml Miel</li>
+                <li>Jengibre fresco rallado</li>
+              </ul>
+              <p class="cocktail-card__method">Shaker con hielo · Colar en copa fría · Twist de limón</p>
+            </div>
+          </article>
+
+          <article class="cocktail-card reveal-stagger">
+            <div class="cocktail-card__number">03</div>
+            <div class="cocktail-card__content">
+              <h3 class="cocktail-card__name">Bosque Nativo</h3>
+              <p class="cocktail-card__desc">Floral y delicado. Para quienes buscan la elegancia en estado puro, con notas que evocan el bosque argentino.</p>
+              <ul class="cocktail-card__ingredients">
+                <li>45 ml Sendero Gin</li>
+                <li>20 ml Elderflower liqueur</li>
+                <li>Agua mineral fría</li>
+                <li>Pepino en láminas</li>
+                <li>Hojas de albahaca</li>
+              </ul>
+              <p class="cocktail-card__method">Copa tipo highball · Construir sobre hielo · Macerar pepino</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUESTRA HISTORIA -->
+    <section id="nosotros" class="story">
+      <div class="container">
+        <div class="story__grid">
+          <div class="story__visual reveal-left">
+            <div class="story__image-wrap">
+              <img src="assets/img/brand-card.jpg" alt="Sendero — Nuestra Marca" class="story__image" loading="lazy">
+            </div>
+            <div class="story__seal-wrap reveal-up">
+              <img src="assets/img/wax-seal.jpg" alt="Sello Sendero" class="story__seal" loading="lazy">
+            </div>
+          </div>
+
+          <div class="story__content">
+            <p class="section-label reveal-up">Quiénes Somos</p>
+            <h2 class="section-title reveal-up">Nuestra<br><em>Historia</em></h2>
+            <div class="section-rule reveal-up"></div>
+            <p class="story__body reveal-up">
+              Todo empezó con una conversación entre amigos, una idea que no paraba de crecer, y la certeza de que Argentina merecía un gin a su altura.
+            </p>
+            <p class="story__body reveal-up">
+              Meses de investigación, docenas de pruebas, y una receta que terminó siendo mucho más que lo que imaginamos. Sendero no es solo un gin: es el resultado de apostar por lo propio, de encontrar el camino.
+            </p>
+            <p class="story__body reveal-up">
+              Hoy compartimos ese sendero con vos. Cada botella lleva el trabajo, la pasión y la identidad de dos argentinos que se animaron a crear algo diferente.
+            </p>
+            <div class="story__tags reveal-up">
+              <span class="story__tag">Argentina</span>
+              <span class="story__tag">Artesanal</span>
+              <span class="story__tag">Premium</span>
+              <span class="story__tag">Pasión</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO / COMPRAR -->
+    <section id="contacto" class="contact">
+      <div class="contact__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="contact__inner">
+          <p class="section-label section-label--light reveal-up">Seguí el Sendero</p>
+          <h2 class="section-title section-title--light reveal-up">¿Querés tu<br><em>Sendero?</em></h2>
+          <p class="contact__intro reveal-up">Escribinos y te contamos cómo conseguirlo. Ventas directas, pedidos especiales y distribución.</p>
+
+          <form class="contact__form reveal-up" id="contactForm" novalidate>
+            <div class="form__row">
+              <div class="form__group">
+                <label for="nombre" class="form__label">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Tu nombre" required>
+              </div>
+              <div class="form__group">
+                <label for="email" class="form__label">Email</label>
+                <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" required>
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="mensaje" class="form__label">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" class="form__textarea" placeholder="¿Cuántas botellas necesitás? ¿Tenés alguna pregunta?" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--beige form__submit">Enviar Mensaje</button>
+            <p class="form__success" id="formSuccess">¡Gracias! Te vamos a responder a la brevedad.</p>
+          </form>
+
+          <div class="contact__social reveal-up">
+            <p class="contact__social-label">Seguinos</p>
+            <div class="contact__social-links">
+              <a href="https://instagram.com/sendero.gin" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="5"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+                @sendero.gin
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <svg class="footer__monogram" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M58,16 C55,9 46,6 36,8 C22,12 14,22 18,33 C22,44 37,48 50,54 C62,60 70,68 67,79 C64,89 52,97 38,97 C26,97 17,91 15,83" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <path d="M50,14 C44,28 36,46 28,64 C24,73 20,84 18,94" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M50,14 C52,8 58,7 60,11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <p class="footer__name">SENDERO</p>
+          <p class="footer__tagline">Gin Premium · Argentina</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <p class="footer__nav-title">Navegar</p>
+          <ul>
+            <li><a href="#el-gin">El Gin</a></li>
+            <li><a href="#botanicos">Botánicos</a></li>
+            <li><a href="#cocteles">Cócteles</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Comprar</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__info">
+          <p class="footer__nav-title">Contacto</p>
+          <p>sendero.gin@gmail.com</p>
+          <p>Argentina</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/sendero.gin" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">Beber con moderación. Prohibida la venta a menores de 18 años.</p>
+        <p class="footer__copy">© 2025 Sendero Gin Premium. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/5491100000000?text=Hola!%20Quiero%20saber%20más%20sobre%20Sendero%20Gin" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

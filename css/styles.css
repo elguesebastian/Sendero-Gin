@@ -730,22 +730,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative;
   z-index: 1;
   margin: 0;
-  max-width: 320px;
-  border-radius: 170px 170px 4px 4px;
-  overflow: hidden;
-  box-shadow: 0 38px 80px rgba(26,32,26,.30);
+  max-width: 300px;
 }
 .bottle-photo::after {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.45);
-  pointer-events: none;
+  left: 50%; bottom: -2px;
+  width: 60%; height: 24px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(26,32,26,.32) 0%, transparent 70%);
+  filter: blur(3px);
+  z-index: -1;
 }
 .bottle-photo__img {
   width: 100%;
   display: block;
+  filter: drop-shadow(0 24px 30px rgba(26,32,26,.26));
 }
 .bottle__specs {
   display: flex;

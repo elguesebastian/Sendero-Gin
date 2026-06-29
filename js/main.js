@@ -153,33 +153,48 @@ window.addEventListener('load', () => {
   });
 })();
 
-/* ── Contact Form ── */
+/* ── Contact Form (FormSubmit AJAX) ── */
 (function () {
   const form    = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
+  const errorEl = document.getElementById('formError');
   if (!form) return;
 
-  form.addEventListener('submit', e => {
+  // AJAX endpoint mirrors the form's action email
+  const ENDPOINT = 'https://formsubmit.co/ajax/senderogin@gmail.com';
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
 
     const nombre  = form.querySelector('#nombre').value.trim();
     const email   = form.querySelector('#email').value.trim();
     const mensaje = form.querySelector('#mensaje').value.trim();
-
     if (!nombre || !email || !mensaje) return;
 
     const submitBtn = form.querySelector('.form__submit');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando…';
+    success?.classList.remove('visible');
+    errorEl?.classList.remove('visible');
 
-    /* Replace with a real backend / Formspree / EmailJS endpoint */
-    setTimeout(() => {
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if (!res.ok) throw new Error('Bad response ' + res.status);
+
       form.reset();
+      if (success) success.classList.add('visible');
+      setTimeout(() => success?.classList.remove('visible'), 8000);
+    } catch (err) {
+      // Network/endpoint failure — offer the direct mail fallback
+      if (errorEl) errorEl.classList.add('visible');
+    } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Enviar Mensaje';
-      if (success) success.classList.add('visible');
-      setTimeout(() => success?.classList.remove('visible'), 5000);
-    }, 1200);
+    }
   });
 })();
 

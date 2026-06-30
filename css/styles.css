@@ -492,11 +492,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .manifesto__pattern {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/img/pattern-green.jpg');
-  background-size: 360px;
+  background-image: url('../assets/img/tile-gold.png');
+  background-size: 380px;
   background-repeat: repeat;
-  opacity: .5;
-  mix-blend-mode: soft-light;
+  opacity: .6;
 }
 .manifesto__inner {
   text-align: center;
@@ -600,10 +599,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   content: '';
   position: absolute; inset: 0;
   border-radius: inherit;
-  background: url('../assets/img/pattern-green.jpg') repeat;
-  background-size: 170px;
-  opacity: .5;
-  mix-blend-mode: soft-light;
+  background: url('../assets/img/tile-gold.png') repeat;
+  background-size: 230px;
+  opacity: .55;
 }
 .brand-panel::after {
   content: '';
@@ -623,9 +621,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 30px 80px rgba(26,32,26,.18);
 }
 .brand-panel--cream::before {
-  background-image: url('../assets/img/pattern-cream.jpg');
-  opacity: .55;
-  mix-blend-mode: multiply;
+  background-image: url('../assets/img/tile-dark.png');
+  opacity: .5;
 }
 .brand-panel--cream::after {
   background: radial-gradient(100% 65% at 50% 32%, rgba(58,70,50,.05), transparent 62%);
@@ -661,11 +658,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .botanicals__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/img/pattern-green.jpg');
-  background-size: 340px;
+  background-image: url('../assets/img/tile-gold.png');
+  background-size: 360px;
   background-repeat: repeat;
-  opacity: .55;
-  mix-blend-mode: soft-light;
+  opacity: .6;
 }
 .botanicals__intro {
   font-size: 1.05rem;
@@ -767,10 +763,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .bottle-stage__panel::before {
   content: '';
   position: absolute; inset: 0;
-  background: url('../assets/img/pattern-green.jpg') repeat;
-  background-size: 170px;
-  opacity: .4;
-  mix-blend-mode: soft-light;
+  background: url('../assets/img/tile-gold.png') repeat;
+  background-size: 200px;
+  opacity: .5;
 }
 .bottle-stage__panel::after {
   content: '';
@@ -1065,10 +1060,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .contact__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/img/pattern-green.jpg');
-  background-size: 360px;
-  opacity: .5;
-  mix-blend-mode: soft-light;
+  background-image: url('../assets/img/tile-gold.png');
+  background-size: 380px;
+  opacity: .6;
 }
 .contact__inner {
   text-align: center;

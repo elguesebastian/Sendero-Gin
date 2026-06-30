@@ -1262,18 +1262,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 768px) {
+  /* En mobile el navbar NO debe tener backdrop-filter: crea un containing block
+     que atrapa al menú fixed dentro de la barra. */
+  .navbar.scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(26, 32, 26, .98);
+  }
   .navbar__menu {
     position: fixed;
     inset: 0;
+    z-index: 1000;
     background: var(--green-deep);
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.25rem;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity .4s var(--ease-out), visibility .4s;
   }
-  .navbar__menu.open { opacity: 1; visibility: visible; }
+  .navbar__menu.open { opacity: 1; visibility: visible; pointer-events: auto; }
   .navbar__link {
     font-size: 1.2rem;
     letter-spacing: .2em;

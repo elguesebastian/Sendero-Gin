@@ -178,7 +178,7 @@ window.addEventListener('load', () => {
 
   function validate(nombreEl, emailEl, mensajeEl) {
     const nombreErr  = document.getElementById('nombreError');
-    const emailErr   = document.getElementById('mailError');
+    const emailErr   = document.getElementById('emailError');
     const mensajeErr = document.getElementById('mensajeError');
 
     let ok = true;
@@ -220,7 +220,7 @@ window.addEventListener('load', () => {
   }
 
   const nombreEl  = form.querySelector('#nombre');
-  const emailEl   = form.querySelector('#mail');
+  const emailEl   = form.querySelector('#email');
   const mensajeEl = form.querySelector('#mensaje');
 
   // Clear field error as soon as the user starts correcting it
@@ -244,10 +244,7 @@ window.addEventListener('load', () => {
 
     try {
       if (!TESTING) {
-        const fd = new FormData(form);
-        const userEmail = emailEl.value.trim();
-        fd.append('_replyto', userEmail);
-        fd.append('email',    userEmail);
+        const fd   = new FormData(form);
         const res  = await fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Accept': 'application/json' },

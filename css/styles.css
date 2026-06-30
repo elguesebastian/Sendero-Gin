@@ -145,6 +145,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-style: italic;
   font-weight: 400;
   color: var(--green-forest);
+  font-weight: bold;
 }
 .section-title--light { color: var(--cream); }
 .section-title--light em { color: var(--beige); }
@@ -474,6 +475,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .reveal-stagger.in-view {
   opacity: 1;
   transform: translate(0);
+  margin-left: 100px;
 }
 
 .reveal-stagger:nth-child(2) { transition-delay: .1s; }
@@ -838,6 +840,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   inset: 0;
   background: url('../assets/img/Pagina 6/serve.jpg') center right / cover no-repeat;
   transform: scale(1.03);
+  margin-left: 150px;
 }
 .serve__scrim {
   position: absolute;

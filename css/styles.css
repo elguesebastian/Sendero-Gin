@@ -1309,3 +1309,40 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* === SELECTION === */
 ::selection { background: var(--beige); color: var(--green-deep); }
+
+/* === GALLERY / MOMENTOS === */
+.gallery {
+  padding: var(--section-py) 0;
+  background: var(--cream);
+}
+.gallery__intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin: 0 auto;
+}
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(.75rem, 2vw, 1.5rem);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+.gallery__item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 20px 50px rgba(26,32,26,.18);
+}
+.gallery__item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  transition: transform .8s var(--ease-out);
+}
+.gallery__item:hover img { transform: scale(1.05); }
+
+@media (max-width: 640px) {
+  .gallery__grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+}

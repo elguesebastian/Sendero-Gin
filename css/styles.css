@@ -584,14 +584,56 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .about__image-wrap {
   position: relative;
-  border-radius: 2px;
-  overflow: visible;
 }
-.about__image {
-  width: 100%;
-  border-radius: 2px;
-  box-shadow: 0 30px 80px rgba(26,32,26,.25);
+
+/* === BRAND PANEL (reemplaza la foto de marca/mármol) === */
+.brand-panel {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  background: linear-gradient(160deg, #3c4934 0%, #1f281a 100%);
+  box-shadow: 0 30px 80px rgba(26,32,26,.30);
+  display: grid;
+  place-items: center;
 }
+.brand-panel::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  background: url('../assets/img/pattern-green.jpg') repeat;
+  background-size: 170px;
+  opacity: .5;
+  mix-blend-mode: soft-light;
+}
+.brand-panel::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(100% 65% at 50% 32%, rgba(196,168,130,.16), transparent 62%);
+}
+.brand-panel__emblem {
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  max-width: 215px;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.32));
+}
+.brand-panel--cream {
+  background: linear-gradient(160deg, #efe8da 0%, #e3d7c2 100%);
+  box-shadow: 0 30px 80px rgba(26,32,26,.18);
+}
+.brand-panel--cream::before {
+  background-image: url('../assets/img/pattern-cream.jpg');
+  opacity: .55;
+  mix-blend-mode: multiply;
+}
+.brand-panel--cream::after {
+  background: radial-gradient(100% 65% at 50% 32%, rgba(58,70,50,.05), transparent 62%);
+}
+.brand-panel--cream .brand-panel__emblem {
+  filter: drop-shadow(0 8px 18px rgba(58,70,50,.18));
+}
+
 .about__seal-wrap {
   position: absolute;
   bottom: -2.75rem;
@@ -701,51 +743,68 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 1.5rem;
 }
 
-/* Real bottle photo — hornacina en arco */
+/* Real bottle photo — hornacina verde + reflejo */
 .bottle__visual { display: flex; justify-content: center; }
 .bottle-stage {
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 1.5rem 1rem 2rem;
+  align-items: flex-end;
+  padding: 2rem 1rem 0;
+  width: 100%;
 }
-.bottle-stage::before {
-  content: '';
+.bottle-stage__panel {
   position: absolute;
-  left: 50%; top: 0;
-  width: min(420px, 96%); height: 100%;
+  left: 50%; top: 0; bottom: 13%;
+  width: min(312px, 84%);
   transform: translateX(-50%);
-  background: radial-gradient(115% 75% at 50% 32%, rgba(196,168,130,.22) 0%, rgba(196,168,130,.06) 45%, transparent 70%);
+  background: linear-gradient(165deg, #3c4934 0%, #1e271a 100%);
+  border-radius: 175px 175px 8px 8px;
+  box-shadow: 0 45px 85px rgba(26,32,26,.32), inset 0 2px 26px rgba(0,0,0,.22);
+  overflow: hidden;
   z-index: 0;
+}
+.bottle-stage__panel::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('../assets/img/pattern-green.jpg') repeat;
+  background-size: 170px;
+  opacity: .4;
+  mix-blend-mode: soft-light;
+}
+.bottle-stage__panel::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(120% 58% at 50% 18%, rgba(196,168,130,.26), transparent 56%);
 }
 .bottle-stage__mark {
   position: absolute;
-  left: 50%; top: 4%;
-  width: 60%; max-width: 240px;
+  left: 50%; top: 9%;
+  width: 42%; max-width: 140px;
   transform: translateX(-50%);
-  opacity: .06;
+  opacity: .12;
   z-index: 0;
 }
 .bottle-photo {
   position: relative;
   z-index: 1;
   margin: 0;
-  max-width: 300px;
-}
-.bottle-photo::after {
-  content: '';
-  position: absolute;
-  left: 50%; bottom: -2px;
-  width: 60%; height: 24px;
-  transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(26,32,26,.32) 0%, transparent 70%);
-  filter: blur(3px);
-  z-index: -1;
+  max-width: 270px;
 }
 .bottle-photo__img {
   width: 100%;
   display: block;
-  filter: drop-shadow(0 24px 30px rgba(26,32,26,.26));
+  filter: drop-shadow(0 26px 30px rgba(26,32,26,.40));
+}
+.bottle-photo__reflection {
+  position: absolute;
+  top: 100%; left: 0;
+  width: 100%;
+  transform: scaleY(-1);
+  opacity: .13;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 48%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 48%);
+  pointer-events: none;
 }
 .bottle__specs {
   display: flex;
@@ -948,17 +1007,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: clamp(3rem, 8vw, 7rem);
   align-items: center;
 }
-.story__image-wrap {
-  border-radius: 2px;
-  overflow: hidden;
-}
-.story__image {
-  width: 100%;
-  border-radius: 2px;
-  transition: transform .8s var(--ease-out);
-  box-shadow: 0 30px 80px rgba(26,32,26,.2);
-}
-.story__image:hover { transform: scale(1.03); }
+.story__image-wrap { position: relative; }
 .story__visual { position: relative; }
 .story__seal-wrap {
   position: absolute;

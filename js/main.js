@@ -160,16 +160,81 @@ window.addEventListener('load', () => {
   const errorEl = document.getElementById('formError');
   if (!form) return;
 
-  // AJAX endpoint mirrors the form's action email
-  const ENDPOINT = 'https://formsubmit.co/ajax/senderogin@gmail.com';
+  const ENDPOINT = 'https://formsubmit.co/ajax/1d67d775e00b66cc9e39b44c87b1a8bb';
+  const TESTING  = window.TESTING ?? false;
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function setFieldError(inputEl, errorEl, msg) {
+    if (msg) {
+      inputEl.classList.add('form__input--error', 'form__textarea--error');
+      errorEl.textContent = msg;
+      errorEl.classList.add('visible');
+    } else {
+      inputEl.classList.remove('form__input--error', 'form__textarea--error');
+      errorEl.textContent = '';
+      errorEl.classList.remove('visible');
+    }
+  }
+
+  function validate(nombreEl, emailEl, mensajeEl) {
+    const nombreErr  = document.getElementById('nombreError');
+    const emailErr   = document.getElementById('mailError');
+    const mensajeErr = document.getElementById('mensajeError');
+
+    let ok = true;
+
+    const nombre = nombreEl.value.trim();
+    if (!nombre) {
+      setFieldError(nombreEl, nombreErr, 'El nombre es obligatorio.');
+      ok = false;
+    } else if (nombre.length < 2) {
+      setFieldError(nombreEl, nombreErr, 'Ingresá al menos 2 caracteres.');
+      ok = false;
+    } else {
+      setFieldError(nombreEl, nombreErr, '');
+    }
+
+    const email = emailEl.value.trim();
+    if (!email) {
+      setFieldError(emailEl, emailErr, 'El email es obligatorio.');
+      ok = false;
+    } else if (!EMAIL_RE.test(email)) {
+      setFieldError(emailEl, emailErr, 'Ingresá un email válido.');
+      ok = false;
+    } else {
+      setFieldError(emailEl, emailErr, '');
+    }
+
+    const mensaje = mensajeEl.value.trim();
+    if (!mensaje) {
+      setFieldError(mensajeEl, mensajeErr, 'El mensaje es obligatorio.');
+      ok = false;
+    } else if (mensaje.length < 10) {
+      setFieldError(mensajeEl, mensajeErr, 'El mensaje debe tener al menos 10 caracteres.');
+      ok = false;
+    } else {
+      setFieldError(mensajeEl, mensajeErr, '');
+    }
+
+    return ok;
+  }
+
+  const nombreEl  = form.querySelector('#nombre');
+  const emailEl   = form.querySelector('#mail');
+  const mensajeEl = form.querySelector('#mensaje');
+
+  // Clear field error as soon as the user starts correcting it
+  [nombreEl, emailEl, mensajeEl].forEach(el => {
+    el.addEventListener('input', () => {
+      const errEl = document.getElementById(el.id + 'Error');
+      if (errEl) setFieldError(el, errEl, '');
+    });
+  });
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
 
-    const nombre  = form.querySelector('#nombre').value.trim();
-    const email   = form.querySelector('#email').value.trim();
-    const mensaje = form.querySelector('#mensaje').value.trim();
-    if (!nombre || !email || !mensaje) return;
+    if (!validate(nombreEl, emailEl, mensajeEl)) return;
 
     const submitBtn = form.querySelector('.form__submit');
     submitBtn.disabled = true;
@@ -178,18 +243,26 @@ window.addEventListener('load', () => {
     errorEl?.classList.remove('visible');
 
     try {
-      const res = await fetch(ENDPOINT, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
-      });
-      if (!res.ok) throw new Error('Bad response ' + res.status);
+      if (!TESTING) {
+        const fd = new FormData(form);
+        const userEmail = emailEl.value.trim();
+        fd.append('_replyto', userEmail);
+        fd.append('email',    userEmail);
+        const res  = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: fd
+        });
+        const data = await res.json().catch(() => ({}));
+        console.log('[FormSubmit]', res.status, data);
+        if (!res.ok) throw new Error('Bad response ' + res.status);
+      }
 
       form.reset();
       if (success) success.classList.add('visible');
       setTimeout(() => success?.classList.remove('visible'), 8000);
     } catch (err) {
-      // Network/endpoint failure — offer the direct mail fallback
+      console.error('[FormSubmit error]', err);
       if (errorEl) errorEl.classList.add('visible');
     } finally {
       submitBtn.disabled = false;

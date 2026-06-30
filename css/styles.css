@@ -492,7 +492,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .manifesto__pattern {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/img/tile-gold.png');
+  background-image: url('../assets/img/compartidos/tile-gold.png');
   background-size: 380px;
   background-repeat: repeat;
   opacity: .6;
@@ -599,7 +599,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   content: '';
   position: absolute; inset: 0;
   border-radius: inherit;
-  background: url('../assets/img/tile-gold.png') repeat;
+  background: url('../assets/img/compartidos/tile-gold.png') repeat;
   background-size: 230px;
   opacity: .55;
 }
@@ -621,7 +621,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 30px 80px rgba(26,32,26,.18);
 }
 .brand-panel--cream::before {
-  background-image: url('../assets/img/tile-dark.png');
+  background-image: url('../assets/img/Pagina 4/tile-dark.png');
   opacity: .5;
 }
 .brand-panel--cream::after {
@@ -658,7 +658,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .botanicals__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/img/tile-gold.png');
+  background-image: url('../assets/img/compartidos/tile-gold.png');
   background-size: 360px;
   background-repeat: repeat;
   opacity: .4;
@@ -763,7 +763,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .bottle-stage__panel::before {
   content: '';
   position: absolute; inset: 0;
-  background: url('../assets/img/tile-gold.png') repeat;
+  background: url('../assets/img/compartidos/tile-gold.png') repeat;
   background-size: 200px;
   opacity: .5;
 }
@@ -836,7 +836,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .serve__bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/img/serve.jpg') center right / cover no-repeat;
+  background: url('../assets/img/Pagina 6/serve.jpg') center right / cover no-repeat;
   transform: scale(1.03);
 }
 .serve__scrim {
@@ -900,7 +900,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .cocktails__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/img/hero-bg.jpg');
+  background-image: url('../assets/img/Pagina 1/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   opacity: .08;
@@ -1060,7 +1060,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .contact__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/img/tile-gold.png');
+  background-image: url('../assets/img/compartidos/tile-gold.png');
   background-size: 380px;
   opacity: .6;
 }
@@ -1130,6 +1130,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .form__error.visible { display: block; }
 .form__error a { color: var(--beige); text-decoration: underline; }
+
+.form__input--error, .form__textarea--error {
+  border-color: #e3856a !important;
+  background: rgba(227,133,106,.06) !important;
+}
+.form__field-error {
+  display: none;
+  font-size: .78rem;
+  color: #e3a090;
+  letter-spacing: .03em;
+  margin-top: -.25rem;
+}
+.form__field-error.visible { display: block; }
 
 .contact__social { margin-top: 3.5rem; }
 .contact__social-label {

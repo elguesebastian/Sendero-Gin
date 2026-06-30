@@ -90,7 +90,7 @@
     <!-- HERO -->
     <section id="inicio" class="hero">
       <div class="hero__bg">
-        <img src="assets/img/hero-bg.jpg" alt="Sendero London Dry Gin" class="hero__image" fetchpriority="high">
+        <img src="assets/img/Pagina 1/hero-bg.jpg" alt="Sendero London Dry Gin" class="hero__image" fetchpriority="high">
         <div class="hero__overlay"></div>
       </div>
 
@@ -169,7 +169,7 @@
             <div class="about__image-wrap brand-panel">
               <div class="about__seal-wrap">
                 <span class="wax-seal" aria-label="Sello de lacre Sendero" role="img">
-                  <img src="assets/img/seal-wax.svg" alt="" class="wax-seal__wax" loading="lazy">
+                  <img src="assets/img/compartidos/seal-wax.svg" alt="" class="wax-seal__wax" loading="lazy">
                   <img src="assets/img/logo/mono-green.png" alt="" class="wax-seal__mono" loading="lazy">
                 </span>
               </div>
@@ -274,8 +274,8 @@
               <span class="bottle-stage__panel" aria-hidden="true"></span>
               <img src="assets/img/logo/mono-only-cream.png" alt="" class="bottle-stage__mark" aria-hidden="true">
               <figure class="bottle-photo">
-                <img src="assets/img/bottle.png" alt="Botella de Sendero London Dry Gin" class="bottle-photo__img" loading="lazy">
-                <img src="assets/img/bottle.png" alt="" class="bottle-photo__reflection" aria-hidden="true">
+                <img src="assets/img/Pagina 5/bottle.png" alt="Botella de Sendero London Dry Gin" class="bottle-photo__img" loading="lazy">
+                <img src="assets/img/Pagina 5/bottle.png" alt="" class="bottle-photo__reflection" aria-hidden="true">
               </figure>
             </div>
           </div>
@@ -377,13 +377,13 @@
         </header>
         <div class="gallery__grid">
           <figure class="gallery__item reveal-stagger">
-            <img src="assets/img/gallery/momento-1.jpg" alt="Gin tonic Sendero servido en copa" loading="lazy">
+            <img src="assets/img/Pagina 8/momento-1.jpg" alt="Gin tonic Sendero servido en copa" loading="lazy">
           </figure>
           <figure class="gallery__item reveal-stagger">
-            <img src="assets/img/gallery/momento-2.jpg" alt="Brindis con gin tonic Sendero" loading="lazy">
+            <img src="assets/img/Pagina 8/momento-2.jpg" alt="Brindis con gin tonic Sendero" loading="lazy">
           </figure>
           <figure class="gallery__item reveal-stagger">
-            <img src="assets/img/gallery/momento-3.jpg" alt="Gin tonic Sendero con botánicos frescos" loading="lazy">
+            <img src="assets/img/Pagina 8/momento-3.jpg" alt="Gin tonic Sendero con botánicos frescos" loading="lazy">
           </figure>
         </div>
       </div>
@@ -397,7 +397,7 @@
             <div class="story__image-wrap brand-panel brand-panel--cream">
             <div class="story__seal-wrap reveal-up">
               <span class="wax-seal" aria-label="Sello de lacre Sendero" role="img">
-                <img src="assets/img/seal-wax.svg" alt="" class="wax-seal__wax" loading="lazy">
+                <img src="assets/img/compartidos/seal-wax.svg" alt="" class="wax-seal__wax" loading="lazy">
                 <img src="assets/img/logo/mono-green.png" alt="" class="wax-seal__mono" loading="lazy">
               </span>
             </div>
@@ -437,26 +437,40 @@
           <p class="contact__intro reveal-up">Escribinos y te contamos cómo conseguirlo. Ventas directas, pedidos especiales y distribución.</p>
 
           <form class="contact__form reveal-up" id="contactForm"
-                action="https://formsubmit.co/senderogin@gmail.com" method="POST" novalidate>
+                action="https://formsubmit.co/1d67d775e00b66cc9e39b44c87b1a8bb" method="POST" novalidate>
             <!-- FormSubmit config -->
             <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de Sendero Gin">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="¡Gracias por contactarte con Sendero Gin!
+
+Recibimos tu mensaje correctamente y en breve uno de nuestros representantes se pondrá en contacto con vos.
+
+Mientras tanto, gracias por ser parte del camino hacia un gin pensado para quienes disfrutan cada detalle.
+
+Sendero Gin
+Un sabor que perdura.">
             <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 
             <div class="form__row">
               <div class="form__group">
                 <label for="nombre" class="form__label">Nombre</label>
-                <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Tu nombre" required>
+                <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Tu nombre"
+                       required aria-describedby="nombreError" autocomplete="given-name">
+                <span class="form__field-error" id="nombreError" role="alert"></span>
               </div>
               <div class="form__group">
-                <label for="email" class="form__label">Email</label>
-                <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" required>
+                <label for="mail" class="form__label">Email</label>
+                <input type="email" id="mail" name="mail" class="form__input" placeholder="tu@email.com"
+                       required aria-describedby="mailError" autocomplete="email">
+                <span class="form__field-error" id="mailError" role="alert"></span>
               </div>
             </div>
             <div class="form__group">
               <label for="mensaje" class="form__label">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" class="form__textarea" placeholder="¿Cuántas botellas necesitás? ¿Tenés alguna pregunta?" rows="4" required></textarea>
+              <textarea id="mensaje" name="mensaje" class="form__textarea" placeholder="¿Cuántas botellas necesitás? ¿Tenés alguna pregunta?" rows="4"
+                        required aria-describedby="mensajeError"></textarea>
+              <span class="form__field-error" id="mensajeError" role="alert"></span>
             </div>
             <button type="submit" class="btn btn--beige form__submit">Enviar Mensaje</button>
             <p class="form__success" id="formSuccess">¡Gracias! Te vamos a responder a la brevedad.</p>
@@ -532,6 +546,7 @@
     </svg>
   </a>
 
+  <script src="test/config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

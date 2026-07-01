@@ -38,6 +38,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { display: block; max-width: 100%; height: auto; }
+picture { display: contents; }
 ul { list-style: none; }
 a { text-decoration: none; color: inherit; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
@@ -838,7 +839,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .serve__bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/img/Pagina 6/serve.jpg') center right / cover no-repeat;
+  background: image-set(
+      url('../assets/img/Pagina 6/serve.webp') type('image/webp'),
+      url('../assets/img/Pagina 6/serve.jpg')  type('image/jpeg')
+    ) center right / cover no-repeat;
   transform: scale(1.03);
   margin-left: 150px;
 }
@@ -903,7 +907,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .cocktails__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/img/Pagina 1/hero-bg.jpg');
+  background-image: image-set(
+      url('../assets/img/Pagina 1/hero-bg.webp') type('image/webp'),
+      url('../assets/img/Pagina 1/hero-bg.jpg')  type('image/jpeg')
+    );
   background-size: cover;
   background-position: center;
   opacity: .08;
@@ -1361,4 +1368,42 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 @media (max-width: 640px) {
   .gallery__grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+}
+
+/* === ACCESSIBILITY: KEYBOARD FOCUS === */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.navbar__link:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--beige);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* Hide the outline only for pointer users who did not tab in */
+:focus:not(:focus-visible) { outline: none; }
+
+/* === ACCESSIBILITY: REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Make sure reveal elements are visible without animating in */
+  .fade-in-up,
+  .fade-in,
+  .fade-in-scale,
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-stagger {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

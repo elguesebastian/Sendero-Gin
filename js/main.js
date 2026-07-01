@@ -28,7 +28,7 @@
   });
 
   btnNo.addEventListener('click', () => {
-    window.location.href = 'https://www.alcoholthinkagain.com.au/';
+    window.location.href = 'https://www.argentina.gob.ar/salud/mental/consumos';
   });
 })();
 
@@ -165,12 +165,15 @@ window.addEventListener('load', () => {
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   function setFieldError(inputEl, errorEl, msg) {
+    const errorClass = inputEl.tagName === 'TEXTAREA'
+      ? 'form__textarea--error'
+      : 'form__input--error';
     if (msg) {
-      inputEl.classList.add('form__input--error', 'form__textarea--error');
+      inputEl.classList.add(errorClass);
       errorEl.textContent = msg;
       errorEl.classList.add('visible');
     } else {
-      inputEl.classList.remove('form__input--error', 'form__textarea--error');
+      inputEl.classList.remove(errorClass);
       errorEl.textContent = '';
       errorEl.classList.remove('visible');
     }
@@ -310,4 +313,10 @@ window.addEventListener('load', () => {
 
   window.addEventListener('scroll', setActive, { passive: true });
   setActive();
+})();
+
+/* ── Dynamic footer year ── */
+(function () {
+  const yearEl = document.getElementById('footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();

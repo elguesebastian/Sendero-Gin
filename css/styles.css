@@ -1310,7 +1310,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   .br-desktop { display: none; }
 
-  .about__seal-wrap { width: 85px; height: 85px; bottom: -1.5rem; right: 1rem; }
+  /* En celular ocultamos el panel de marca (S grande + trama + sello):
+     la trama ya aparece en el manifiesto y repetirla queda cargado. En desktop se mantiene. */
+  .about__visual,
+  .story__visual { display: none; }
 
   .manifesto__quote { font-size: 1.2rem; }
 }

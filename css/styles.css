@@ -146,7 +146,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-style: italic;
   font-weight: 400;
   color: var(--green-forest);
-  font-weight: bold;
 }
 .section-title--light { color: var(--cream); }
 .section-title--light em { color: var(--beige); }
@@ -163,6 +162,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   max-width: 680px;
   margin: 0 auto 4rem;
 }
+/* Variante editorial alineada a la izquierda (rompe la simetría de "todo centrado") */
+.section-header--left {
+  text-align: left;
+  max-width: 760px;
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+}
+.section-header--left .section-title { margin-left: -.03em; }
+.section-header--left .botanicals__intro,
+.section-header--left .cocktails__intro,
+.section-header--left .gallery__intro { margin-left: 0; margin-right: 0; }
 
 /* === AGE GATE === */
 .age-gate {
@@ -668,7 +677,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .botanicals__intro {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: rgba(237,232,220,.65);
+  color: rgba(237,232,220,.82);
 }
 .botanicals__grid {
   display: grid;
@@ -913,7 +922,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .cocktails__intro {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: rgba(237,232,220,.65);
+  color: rgba(237,232,220,.82);
 }
 .cocktails__grid {
   display: grid;
@@ -1076,7 +1085,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .contact__intro {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: rgba(237,232,220,.65);
+  color: rgba(237,232,220,.82);
   margin-bottom: 3rem;
 }
 .contact__form { text-align: left; }
@@ -1161,7 +1170,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   gap: .6rem;
   font-size: .85rem;
-  color: rgba(237,232,220,.65);
+  color: rgba(237,232,220,.82);
   transition: color .3s;
 }
 .social-link:hover { color: var(--beige); }

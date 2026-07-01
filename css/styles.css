@@ -930,11 +930,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative;
   transition: background .35s;
 }
-.cocktail-card:hover { background: rgba(58,70,50,1.1); }
-.cocktail-card--featured {
-  background: var(--green-deep);
-}
-.cocktail-card--featured:hover { background: #1e261a; }
+.cocktail-card:hover { background: var(--green-deep); }
 
 .cocktail-card__badge {
   position: absolute;

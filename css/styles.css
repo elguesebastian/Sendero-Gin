@@ -739,10 +739,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .bottle__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 8vw, 7rem);
-  align-items: center;
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
+.bottle__grid .section-rule { margin-left: auto; margin-right: auto; }
+.bottle__grid .bottle__specs { justify-content: center; }
 .bottle__body {
   font-size: 1.05rem;
   line-height: 1.8;

@@ -73,7 +73,7 @@
         <li><a href="#botanicos" class="navbar__link">Botánicos</a></li>
         <li><a href="#cocteles" class="navbar__link">Cócteles</a></li>
         <li><a href="#nosotros" class="navbar__link">Nosotros</a></li>
-        <li><a href="#contacto" class="navbar__link navbar__cta">Contacto</a></li>
+        <li><a href="#contacto" class="navbar__link navbar__cta">Preventa</a></li>
       </ul>
 
       <button class="navbar__hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
@@ -98,6 +98,7 @@
       </div>
 
       <div class="hero__content">
+        <a href="#contacto" class="hero__badge fade-in-up" style="--delay:.1s"><span class="hero__badge-dot"></span>Primera preventa · cupo limitado</a>
         <p class="hero__eyebrow fade-in-up" style="--delay:.2s">ARGENTINA &nbsp;·&nbsp; LONDON DRY GIN</p>
 
         <img src="assets/img/logo/mono-only-cream.png" alt="" class="hero__monogram fade-in-scale" style="--delay:.5s">
@@ -111,7 +112,7 @@
 
         <div class="hero__cta fade-in-up" style="--delay:1.5s">
           <a href="#el-gin" class="btn btn--outline-white">Descubrí el Gin</a>
-          <a href="#contacto" class="btn btn--beige">Conseguí el tuyo</a>
+          <a href="#contacto" class="btn btn--beige">Reservá el tuyo</a>
         </div>
       </div>
 
@@ -270,7 +271,7 @@
               <div class="bottle-spec"><span class="bottle-spec__val">43</span><span class="bottle-spec__unit">% vol.</span></div>
               <div class="bottle-spec"><span class="bottle-spec__val">London</span><span class="bottle-spec__unit">Dry Gin</span></div>
             </div>
-            <a href="#contacto" class="btn btn--primary reveal-up">Quiero mi Sendero</a>
+            <a href="#contacto" class="btn btn--primary reveal-up">Reservá el tuyo · $13.000</a>
           </div>
 
         </div>
@@ -437,23 +438,30 @@
       <div class="contact__bg" aria-hidden="true"></div>
       <div class="container">
         <div class="contact__inner">
-          <p class="section-label section-label--light reveal-up">Seguí el Sendero</p>
-          <h2 class="section-title section-title--light reveal-up">¿Querés tu<br><em>Sendero?</em></h2>
-          <p class="contact__intro reveal-up">Escribinos y te contamos cómo conseguirlo. Ventas directas, pedidos especiales y distribución.</p>
+          <p class="section-label section-label--light reveal-up">Primera preventa</p>
+          <h2 class="section-title section-title--light reveal-up">Reservá tu<br><em>Sendero</em></h2>
+          <p class="contact__intro reveal-up">Sé de los primeros. Abrimos la preventa de la primera tanda —unidades limitadas— antes del lanzamiento de la semana que viene.</p>
+
+          <div class="presale reveal-up">
+            <span class="presale__label">Precio de preventa</span>
+            <span class="presale__amount">$13.000</span>
+            <span class="presale__after">Después <s>$18.000</s></span>
+          </div>
+          <p class="presale__note reveal-up">Dejá tus datos y te escribimos por mail para coordinar el pago y la entrega. Si preferís, también podés reservar por Instagram.</p>
 
           <form class="contact__form reveal-up" id="contactForm"
                 action="https://formsubmit.co/1d67d775e00b66cc9e39b44c87b1a8bb" method="POST">
             <!-- FormSubmit config -->
-            <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de Sendero Gin">
+            <input type="hidden" name="_subject" value="Nueva reserva de preventa — Sendero Gin">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_autoresponse" value="Gracias por escribirnos.
+            <input type="hidden" name="_autoresponse" value="¡Gracias por sumarte a la primera preventa de Sendero!
 
-Recibimos tu consulta y pronto nos estaremos comunicando con vos.
+Recibimos tu reserva. En breve te vamos a escribir para coordinar el pago y la entrega.
 
-En Sendero Gin creemos que las mejores experiencias comienzan con un primer contacto. Esperamos acompañarte para que descubras un gin con carácter, calidad y un sabor que perdura.
+Sos de los primeros en tener nuestro London Dry Gin: una receta propia, pensada para compartir.
 
-¡Hasta pronto!
+¡Nos vemos pronto!
 
 Equipo de Sendero Gin">
             <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
@@ -473,15 +481,28 @@ Equipo de Sendero Gin">
               </div>
             </div>
             <div class="form__group">
-              <label for="mensaje" class="form__label">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" class="form__textarea" placeholder="¿Cuántas botellas necesitás? ¿Tenés alguna pregunta?" rows="4"
-                        required aria-describedby="mensajeError"></textarea>
+              <label for="cantidad" class="form__label">¿Cuántas botellas querés reservar?</label>
+              <select id="cantidad" name="cantidad" class="form__input form__select" required>
+                <option value="1 botella">1 botella</option>
+                <option value="2 botellas">2 botellas</option>
+                <option value="3 botellas">3 botellas</option>
+                <option value="6 botellas (caja)">6 botellas (caja)</option>
+                <option value="Más de 6 / consulta">Más de 6 / consulta</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="mensaje" class="form__label">Comentario <span class="form__optional">(opcional)</span></label>
+              <textarea id="mensaje" name="mensaje" class="form__textarea" placeholder="¿Alguna consulta o pedido especial?" rows="3"
+                        aria-describedby="mensajeError"></textarea>
               <span class="form__field-error" id="mensajeError" role="alert"></span>
             </div>
-            <button type="submit" class="btn btn--beige form__submit">Enviar Mensaje</button>
-            <p class="form__success" id="formSuccess">¡Gracias! Te vamos a responder a la brevedad.</p>
+            <button type="submit" class="btn btn--beige form__submit">Reservar mi Sendero</button>
+            <p class="form__success" id="formSuccess">¡Reserva enviada! Te escribimos por mail para coordinar el pago y la entrega.</p>
             <p class="form__error" id="formError">No se pudo enviar. Escribinos directo a <a href="mailto:senderogin@gmail.com">senderogin@gmail.com</a>.</p>
           </form>
+
+          <p class="presale__or reveal-up">o si preferís</p>
+          <a href="https://instagram.com/senderogin" target="_blank" rel="noopener" class="btn btn--outline-white presale__ig reveal-up">Reservá por Instagram</a>
 
           <div class="contact__social reveal-up">
             <p class="contact__social-label">Seguinos</p>
@@ -518,7 +539,7 @@ Equipo de Sendero Gin">
             <li><a href="#botanicos">Botánicos</a></li>
             <li><a href="#cocteles">Cócteles</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#contacto">Preventa</a></li>
           </ul>
         </nav>
 

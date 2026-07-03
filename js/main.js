@@ -208,12 +208,10 @@ window.addEventListener('load', () => {
       setFieldError(emailEl, emailErr, '');
     }
 
+    // Comentario opcional: solo se valida si escribieron algo
     const mensaje = mensajeEl.value.trim();
-    if (!mensaje) {
-      setFieldError(mensajeEl, mensajeErr, 'El mensaje es obligatorio.');
-      ok = false;
-    } else if (mensaje.length < 10) {
-      setFieldError(mensajeEl, mensajeErr, 'El mensaje debe tener al menos 10 caracteres.');
+    if (mensaje && mensaje.length < 5) {
+      setFieldError(mensajeEl, mensajeErr, 'Contanos un poco más o dejalo vacío.');
       ok = false;
     } else {
       setFieldError(mensajeEl, mensajeErr, '');

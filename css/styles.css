@@ -501,12 +501,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow: hidden;
 }
 .manifesto__pattern {
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/img/compartidos/tile-gold.png');
-  background-size: 380px;
-  background-repeat: repeat;
-  opacity: .42;
+  display: none;
 }
 .manifesto__inner {
   text-align: center;
@@ -1072,11 +1067,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow: hidden;
 }
 .contact__bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/img/compartidos/tile-gold.png');
-  background-size: 380px;
-  opacity: .22;
+  display: none;
 }
 .contact__inner {
   text-align: center;

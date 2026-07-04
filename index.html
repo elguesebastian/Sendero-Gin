@@ -46,14 +46,28 @@
   <!-- ===================== AGE GATE ===================== -->
   <div id="age-gate" class="age-gate">
     <div class="age-gate__inner">
-      <img src="assets/img/logo/mono-only-cream.png" alt="Sendero" class="age-gate__monogram">
-      <h2 class="age-gate__title">Bienvenido a Sendero</h2>
-      <p class="age-gate__text">Por favor confirmá que tenés 18 años o más para continuar.</p>
-      <div class="age-gate__buttons">
-        <button id="age-yes" class="btn btn--beige">Soy mayor de 18</button>
-        <button id="age-no" class="btn btn--ghost">Soy menor de edad</button>
+      <!-- Estado inicial: elección -->
+      <div class="age-gate__panel" id="ageMain">
+        <img src="assets/img/logo/mono-only-cream.png" alt="Sendero" class="age-gate__monogram">
+        <h2 class="age-gate__title">Bienvenido a Sendero</h2>
+        <p class="age-gate__text">Por favor confirmá que tenés 18 años o más para continuar.</p>
+        <div class="age-gate__buttons">
+          <button id="age-yes" class="btn btn--beige">Soy mayor de 18</button>
+          <button id="age-no" class="btn btn--ghost">Soy menor de edad</button>
+        </div>
+        <p class="age-gate__legal">Sendero promueve el consumo responsable.<br>Bebé con moderación.</p>
       </div>
-      <p class="age-gate__legal">Sendero promueve el consumo responsable.<br>Bebé con moderación.</p>
+
+      <!-- Estado bloqueado: menor de edad -->
+      <div class="age-gate__panel" id="ageDenied" hidden>
+        <img src="assets/img/logo/mono-only-cream.png" alt="Sendero" class="age-gate__monogram">
+        <h2 class="age-gate__title">Gracias por tu honestidad</h2>
+        <p class="age-gate__text">Sendero es una experiencia para mayores de 18 años.<br>¡Te esperamos pronto!</p>
+        <div class="age-gate__buttons">
+          <button id="age-back" class="btn btn--ghost">Me equivoqué, volver</button>
+        </div>
+        <p class="age-gate__legal">Sendero promueve el consumo responsable.<br>Bebé con moderación.</p>
+      </div>
     </div>
   </div>
 

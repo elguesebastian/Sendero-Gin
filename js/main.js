@@ -9,6 +9,9 @@
   const gate    = document.getElementById('age-gate');
   const btnYes  = document.getElementById('age-yes');
   const btnNo   = document.getElementById('age-no');
+  const btnBack = document.getElementById('age-back');
+  const main    = document.getElementById('ageMain');
+  const denied  = document.getElementById('ageDenied');
 
   if (!gate) return;
 
@@ -27,8 +30,16 @@
     initHero();
   });
 
+  // Menor de edad: no lo saca del sitio, muestra el panel bloqueado
   btnNo.addEventListener('click', () => {
-    window.location.href = 'https://www.argentina.gob.ar/salud/mental/consumos';
+    main.hidden = true;
+    denied.hidden = false;
+  });
+
+  // Por si se equivocó: vuelve a la elección
+  btnBack.addEventListener('click', () => {
+    denied.hidden = true;
+    main.hidden = false;
   });
 })();
 

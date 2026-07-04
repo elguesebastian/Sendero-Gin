@@ -193,16 +193,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .age-gate__monogram {
   width: auto;
-  height: 78px;
-  margin: 0 auto 1.25rem;
-}
-.age-gate__brand {
-  font-family: var(--font-body);
-  font-size: .8rem;
-  font-weight: 600;
-  letter-spacing: .35em;
-  color: var(--beige);
-  margin-bottom: 2rem;
+  height: 88px;
+  margin: 0 auto 2rem;
 }
 .age-gate__title {
   font-family: var(--font-display);

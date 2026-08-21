@@ -1477,6 +1477,15 @@ textarea:focus-visible {
   line-height: 1;
   color: var(--cream);
 }
+.presale__deadline {
+  margin-top: .55rem;
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--beige);
+}
 .presale__after {
   font-family: var(--font-body);
   font-size: .82rem;

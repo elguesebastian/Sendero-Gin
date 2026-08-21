@@ -1601,6 +1601,30 @@ textarea:focus-visible {
   color: rgba(237,232,220,.5);
 }
 .presale__ig { margin: 0 auto; }
+.contact__quick-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.contact__quick-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+}
+.contact__quick-actions svg { width: 20px; height: 20px; }
+.btn--whatsapp {
+  color: #fff;
+  background: #218c4d;
+  border: 1px solid #2aaa61;
+}
+.btn--whatsapp:hover { color: #fff; background: #27a65b; border-color: #38bd70; }
+@media (max-width: 480px) {
+  .contact__quick-actions { flex-direction: column; align-items: stretch; }
+  .contact__quick-actions .btn { width: 100%; }
+  .whatsapp-btn { right: 1rem; bottom: 1rem; width: 50px; height: 50px; }
+}
 
 /* Select del formulario */
 .form__select {

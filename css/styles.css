@@ -281,6 +281,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .navbar__link:hover { color: var(--cream); }
 .navbar__link:hover::after { width: 100%; }
+.navbar__link.active { color: var(--beige); }
+.navbar__link.active::after { width: 100%; }
 
 .navbar__cta {
   padding: .6rem 1.4rem;
@@ -356,13 +358,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 0 1.5rem;
 }
 .hero__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   font-family: var(--font-body);
   font-size: .72rem;
   font-weight: 500;
   letter-spacing: .3em;
   text-transform: uppercase;
   color: var(--beige);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+.hero__eyebrow span {
+  width: clamp(1.8rem, 5vw, 3rem);
+  height: 1px;
+  background: rgba(196,168,130,.5);
 }
 .hero__monogram {
   width: auto; height: 84px;
@@ -399,7 +410,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 300;
   font-style: italic;
   color: rgba(237,232,220,.85);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.35rem;
 }
 .hero__cta {
   display: flex;
@@ -741,13 +752,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .bottle__grid {
   display: grid;
-  grid-template-columns: 1fr;
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(3rem, 8vw, 7rem);
+  align-items: center;
 }
-.bottle__grid .section-rule { margin-left: auto; margin-right: auto; }
-.bottle__grid .bottle__specs { justify-content: center; }
 .bottle__body {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -755,23 +763,24 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 1.5rem;
 }
 
-/* Real bottle photo — hornacina verde + reflejo */
+/* Botella en hornacina editorial */
 .bottle__visual { display: flex; justify-content: center; }
 .bottle-stage {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 2rem 1rem 0;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  padding: clamp(3rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 2.5rem) clamp(1.75rem, 4vw, 2.75rem);
 }
 .bottle-stage__panel {
   position: absolute;
-  left: 50%; top: 0; bottom: 13%;
-  width: min(312px, 84%);
+  left: 50%; top: 0; bottom: 0;
+  width: min(340px, 100%);
   transform: translateX(-50%);
-  background: linear-gradient(165deg, #3c4934 0%, #1e271a 100%);
-  border-radius: 175px 175px 8px 8px;
+  background: linear-gradient(165deg, #45543d 0%, #29331f 100%);
+  border-radius: 180px 180px 14px 14px;
   box-shadow: 0 45px 85px rgba(26,32,26,.32), inset 0 2px 26px rgba(0,0,0,.22);
   overflow: hidden;
   z-index: 0;
@@ -781,41 +790,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute; inset: 0;
   background: url('../assets/img/compartidos/tile-gold.png') repeat;
   background-size: 200px;
-  opacity: .5;
+  opacity: .35;
 }
 .bottle-stage__panel::after {
   content: '';
   position: absolute; inset: 0;
   background: radial-gradient(120% 58% at 50% 18%, rgba(196,168,130,.26), transparent 56%);
 }
-.bottle-stage__mark {
-  position: absolute;
-  left: 50%; top: 9%;
-  width: 42%; max-width: 140px;
-  transform: translateX(-50%);
-  opacity: .12;
-  z-index: 0;
-}
-.bottle-photo {
+.bottle-shot {
   position: relative;
   z-index: 1;
   margin: 0;
-  max-width: 270px;
+  display: flex;
+  justify-content: center;
 }
-.bottle-photo__img {
-  width: 100%;
+.bottle-shot__img {
   display: block;
-  filter: drop-shadow(0 26px 30px rgba(26,32,26,.40));
-}
-.bottle-photo__reflection {
-  position: absolute;
-  top: 100%; left: 0;
-  width: 100%;
-  transform: scaleY(-1);
-  opacity: .13;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 48%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 48%);
-  pointer-events: none;
+  width: auto;
+  height: auto;
+  max-height: clamp(420px, 50vw, 550px);
+  object-fit: contain;
+  filter: drop-shadow(0 22px 30px rgba(26,32,26,.3));
 }
 .bottle__specs {
   display: flex;
@@ -1312,6 +1307,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .navbar__hamburger { display: flex; z-index: 1001; }
 
   .hero__title { font-size: clamp(4rem, 22vw, 8rem); }
+  .hero__eyebrow { gap: .65rem; font-size: .62rem; letter-spacing: .18em; }
+
+  .bottle__grid { gap: 2.75rem; }
+  .bottle-stage { padding: 2.5rem 1rem 1.25rem; }
+  .bottle-stage__panel { width: min(300px, 88%); }
+  .bottle-shot__img { max-height: 360px; }
 
   .botanicals__grid { grid-template-columns: 1fr; }
   .cocktails__grid { grid-template-columns: 1fr; }
@@ -1355,27 +1356,119 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .gallery__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(.75rem, 2vw, 1.5rem);
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: repeat(2, clamp(8rem, 15vw, 12rem));
+  gap: clamp(.6rem, 1.4vw, 1.1rem);
   margin-top: clamp(2.5rem, 6vw, 4rem);
 }
 .gallery__item {
+  position: relative;
   margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: 0 20px 50px rgba(26,32,26,.18);
+  background: var(--green-forest);
 }
+.gallery__item--1 { grid-row: 1 / span 2; }
+.gallery__item--3 img { object-position: center 32%; }
 .gallery__item img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
   object-fit: cover;
   display: block;
   transition: transform .8s var(--ease-out);
 }
-.gallery__item:hover img { transform: scale(1.05); }
+.gallery__item:hover img,
+.gallery__item:focus-visible img { transform: scale(1.06); }
+.gallery__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 1.2rem;
+  color: var(--cream);
+  background: linear-gradient(to top, rgba(26,32,26,.72), transparent 68%);
+  opacity: 0;
+  transition: opacity .35s var(--ease-out);
+}
+.gallery__item:hover .gallery__overlay,
+.gallery__item:focus-visible .gallery__overlay { opacity: 1; }
+.gallery__zoom {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(237,232,220,.55);
+  border-radius: 50%;
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+.gallery__caption { font-family: var(--font-display); font-size: 1.3rem; }
+
+.gallery-lightbox[hidden] { display: none; }
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 5vw, 4rem);
+  background: rgba(20,25,18,.94);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: lightboxIn .3s var(--ease-out) both;
+}
+@keyframes lightboxIn { from { opacity: 0; } to { opacity: 1; } }
+.gallery-lightbox__figure {
+  margin: 0;
+  max-width: min(880px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.gallery-lightbox__figure img { width: 100%; max-height: 78vh; object-fit: contain; border-radius: 4px; display: block; }
+.gallery-lightbox__caption { display: flex; justify-content: space-between; gap: 1rem; font-family: var(--font-display); font-size: 1.35rem; color: var(--cream); }
+.gallery-lightbox__count { font-family: var(--font-body); font-size: .72rem; letter-spacing: .2em; color: rgba(237,232,220,.6); }
+.gallery-lightbox__close,
+.gallery-lightbox__nav {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  color: var(--cream);
+  background: rgba(237,232,220,.08);
+  border: 1px solid rgba(237,232,220,.35);
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+}
+.gallery-lightbox__close { top: clamp(1rem, 3vw, 2rem); right: clamp(1rem, 3vw, 2rem); }
+.gallery-lightbox__nav { top: 50%; transform: translateY(-50%); }
+.gallery-lightbox__nav--prev { left: clamp(.6rem, 3vw, 2rem); }
+.gallery-lightbox__nav--next { right: clamp(.6rem, 3vw, 2rem); }
+body.lightbox-open { overflow: hidden; }
 
 @media (max-width: 640px) {
-  .gallery__grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .gallery__grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(2, clamp(9rem, 34vw, 13rem)); max-width: 440px; margin-left: auto; margin-right: auto; }
+  .gallery__overlay { opacity: 1; padding: .8rem; }
+  .gallery__caption { font-size: 1rem; }
+  .gallery__zoom { width: 32px; height: 32px; top: .65rem; right: .65rem; }
+  .gallery-lightbox__nav { width: 38px; height: 38px; }
 }
 
 /* === ACCESSIBILITY: KEYBOARD FOCUS === */

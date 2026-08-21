@@ -1361,10 +1361,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   .br-desktop { display: none; }
 
-  /* En celular ocultamos el panel de marca (S grande + trama + sello):
-     la trama ya aparece en el manifiesto y repetirla queda cargado. En desktop se mantiene. */
+  /* Las fotos editoriales también forman parte del relato en celular. */
   .about__visual,
-  .story__visual { display: none; }
+  .story__visual {
+    display: block;
+    width: min(100%, 430px);
+    margin-inline: auto;
+  }
+  .editorial-photo {
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 20px 48px rgba(26,32,26,.18);
+  }
 
   .manifesto__quote { font-size: 1.2rem; }
 }

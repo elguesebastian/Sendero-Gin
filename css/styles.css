@@ -1656,17 +1656,6 @@ textarea:focus-visible {
   line-height: 1;
   color: var(--cream);
 }
-.price-card__unit {
-  margin-top: .55rem;
-  font-family: var(--font-body);
-  font-size: .75rem;
-  letter-spacing: .04em;
-  color: rgba(237,232,220,.6);
-}
-.price-card--featured .price-card__unit {
-  color: var(--beige);
-  font-weight: 600;
-}
 .presale__label {
   font-family: var(--font-body);
   font-size: .68rem; font-weight: 600;

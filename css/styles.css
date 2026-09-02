@@ -1600,6 +1600,73 @@ textarea:focus-visible {
   border-radius: 4px;
   background: rgba(196,168,130,.06);
 }
+
+/* Precios: unidad + promo por dos */
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  margin: 2.25rem auto 1.5rem;
+}
+.price-card {
+  position: relative;
+  flex: 0 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 1.75rem;
+  border: 1px solid rgba(196,168,130,.32);
+  border-radius: 4px;
+  background: rgba(196,168,130,.06);
+}
+.price-card--featured {
+  border-color: var(--beige);
+  background: rgba(196,168,130,.13);
+}
+.price-card__badge {
+  position: absolute;
+  top: -.7rem; left: 50%;
+  transform: translateX(-50%);
+  padding: .28rem .85rem;
+  background: var(--beige);
+  color: var(--green-deep);
+  font-family: var(--font-body);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.price-card__qty {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--beige);
+  margin-bottom: .5rem;
+}
+.price-card__amount {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--cream);
+}
+.price-card__unit {
+  margin-top: .55rem;
+  font-family: var(--font-body);
+  font-size: .75rem;
+  letter-spacing: .04em;
+  color: rgba(237,232,220,.6);
+}
+.price-card--featured .price-card__unit {
+  color: var(--beige);
+  font-weight: 600;
+}
 .presale__label {
   font-family: var(--font-body);
   font-size: .68rem; font-weight: 600;

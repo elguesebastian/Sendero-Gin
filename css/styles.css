@@ -1042,6 +1042,50 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* === STORY (NOSOTROS) === */
+.trade {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  background: var(--green-forest);
+  color: var(--cream);
+}
+.trade__inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.trade__copy { max-width: 720px; }
+.trade__eyebrow {
+  margin-bottom: 1.1rem;
+  color: var(--beige-light);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.trade__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 5vw, 4.7rem);
+  font-weight: 400;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.trade__title em { color: var(--beige-light); font-weight: 300; }
+.trade__text {
+  max-width: 590px;
+  margin-top: 1.3rem;
+  color: rgba(237,232,220,.82);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.trade__cta { flex-shrink: 0; white-space: nowrap; }
+.trade__cta span { font-size: 1.15rem; line-height: 0; }
+@media (max-width: 900px) {
+  .trade__inner { flex-direction: column; align-items: flex-start; gap: 2rem; }
+}
+@media (max-width: 480px) {
+  .trade__cta { width: 100%; white-space: normal; text-align: center; }
+}
+
 .story {
   padding: var(--section-py) 0;
   background: var(--cream-warm);
